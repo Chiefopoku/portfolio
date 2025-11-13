@@ -242,7 +242,8 @@ window.addEventListener("scroll", () => {
 // ==========================
 const backToTop = document.createElement("button");
 backToTop.classList.add("back-to-top");
-backToTop.innerHTML = '<i class="fas fa-arrow-up"></i>';
+backToTop.innerHTML = "⬆️";
+backToTop.setAttribute("aria-label", "Back to top");
 document.body.appendChild(backToTop);
 
 window.addEventListener("scroll", () => {
