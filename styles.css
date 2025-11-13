@@ -963,6 +963,14 @@ footer {
 }
 
 @media (max-width: 768px) {
+  header {
+    padding: 0.6rem 0.9rem;
+  }
+
+  .header-content {
+    gap: 0.15rem;
+  }
+
   header nav {
     flex-direction: column;
     width: 100%;
@@ -999,13 +1007,29 @@ footer {
   }
 
   .header-top {
-    flex-direction: column;
-    text-align: center;
-    gap: 0.8rem;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    text-align: left;
+    gap: 0.4rem;
   }
 
   .brand {
-    text-align: center;
+    text-align: left;
+  }
+
+  .brand h1 {
+    font-size: 1.35rem;
+  }
+
+  .brand p {
+    font-size: 0.82rem;
+  }
+
+  .header-controls {
+    width: auto;
+    justify-content: flex-end;
+    gap: 0.4rem;
   }
 
   .nav-toggle {
