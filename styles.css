@@ -281,7 +281,7 @@ header.nav-open .nav-toggle span:nth-child(3) {
    ================================================ */
 #hero {
   position: relative;
-  height: 90vh;
+  min-height: 90vh;
   background: linear-gradient(rgba(9, 17, 34, 0.75), rgba(9, 17, 34, 0.65)),
     url("https://images.unsplash.com/photo-1521791136064-7986c2920216?auto=format&fit=crop&w=1600&q=80")
       center/cover no-repeat fixed;
@@ -1037,8 +1037,9 @@ footer {
   }
 
   #hero {
-    height: 80vh;
+    min-height: 70vh;
     background-attachment: scroll;
+    padding-top: 4.5rem;
   }
 
   .hero-content h2 {
