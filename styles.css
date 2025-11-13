@@ -754,6 +754,8 @@ main > section {
   display: flex;
   align-items: center;
   gap: 1.5rem;
+  position: relative;
+  overflow: hidden;
 }
 
 .project-card:hover {
@@ -764,6 +766,42 @@ main > section {
 .project-card img {
   width: 80px;
   height: 80px;
+}
+
+.project-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(10, 10, 20, 0.9);
+  color: #f5f0e6;
+  padding: 1.8rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  backdrop-filter: blur(4px);
+}
+
+.project-card:hover .project-overlay {
+  opacity: 1;
+}
+
+.project-overlay p {
+  margin-bottom: 0.9rem;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.overlay-link {
+  color: #fff;
+  font-weight: 600;
+  text-decoration: none;
+  padding: 0.4rem 0.9rem;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  transition: background 0.3s ease;
 }
 
 .project-card h3 a {
@@ -820,6 +858,12 @@ main > section {
 
 .submit-btn {
   padding-inline: 2rem;
+  color: #fff;
+}
+
+.submit-btn:hover,
+.submit-btn:focus-visible {
+  color: #fff;
 }
 
 /* ================================================
