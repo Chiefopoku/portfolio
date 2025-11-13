@@ -30,7 +30,10 @@ if (navToggleBtn && siteHeader) {
 
 navLinkButtons.forEach((link) => {
   link.addEventListener("click", () => {
-    if (window.innerWidth <= 768 && siteHeader?.classList.contains("nav-open")) {
+    if (
+      window.innerWidth <= 768 &&
+      siteHeader?.classList.contains("nav-open")
+    ) {
       siteHeader.classList.remove("nav-open");
       navToggleBtn?.setAttribute("aria-expanded", "false");
     }
@@ -175,7 +178,9 @@ function animateCounter(element) {
 // ==========================
 // Visual Timeline Parallax
 // ==========================
-const parallaxCards = document.querySelectorAll(".timeline-card[data-parallax-speed]");
+const parallaxCards = document.querySelectorAll(
+  ".timeline-card[data-parallax-speed]"
+);
 
 function handleParallax() {
   const scrollY = window.scrollY;
@@ -257,7 +262,9 @@ const spyObserver = new IntersectionObserver(
   { threshold: 0.4 }
 );
 
-Object.values(sectionMap).forEach(({ section }) => spyObserver.observe(section));
+Object.values(sectionMap).forEach(({ section }) =>
+  spyObserver.observe(section)
+);
 
 window.addEventListener("scroll", () => {
   if (!siteHeader) return;
