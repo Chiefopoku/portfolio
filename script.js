@@ -197,40 +197,6 @@ if (parallaxCards.length) {
 }
 
 // ==========================
-// CV Upload → Download Link
-// ==========================
-const cvUploadInput = document.getElementById("cvUpload");
-const cvDownloadLink = document.getElementById("cvDownload");
-let cvObjectUrl;
-
-if (cvUploadInput && cvDownloadLink) {
-  const defaultHref = cvDownloadLink.getAttribute("href");
-
-  cvUploadInput.addEventListener("change", () => {
-    const fileList = cvUploadInput.files;
-    const file = fileList && fileList[0];
-
-    if (cvObjectUrl) {
-      URL.revokeObjectURL(cvObjectUrl);
-      cvObjectUrl = null;
-    }
-
-    if (!file) {
-      cvDownloadLink.href = defaultHref;
-      cvDownloadLink.textContent = "Download CV";
-      cvDownloadLink.removeAttribute("data-filename");
-      return;
-    }
-
-    cvObjectUrl = URL.createObjectURL(file);
-    cvDownloadLink.href = cvObjectUrl;
-    cvDownloadLink.download = file.name;
-    cvDownloadLink.textContent = "Download Uploaded CV";
-    cvDownloadLink.dataset.filename = file.name;
-  });
-}
-
-// ==========================
 // Header Scroll Effects & Scroll Spy
 // ==========================
 const navLinks = document.querySelectorAll(".nav-link[href^='#']");

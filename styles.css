@@ -546,28 +546,6 @@ main > section {
   justify-content: center;
 }
 
-.upload-label {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  padding: 0.75rem 1.2rem;
-  border-radius: 50px;
-  border: 2px dashed var(--primary);
-  color: var(--primary);
-  font-weight: 600;
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
-
-.upload-label:hover {
-  background: rgba(184, 124, 76, 0.12);
-  color: var(--accent);
-}
-
-#cvUpload {
-  display: none;
-}
-
 #cvDownload {
   min-width: 190px;
   text-align: center;
@@ -1071,7 +1049,6 @@ footer {
     flex-direction: column;
   }
 
-  .upload-label,
   #cvDownload {
     width: 100%;
     justify-content: center;
@@ -1096,6 +1073,12 @@ footer {
   .timeline-card::before {
     left: 50%;
     transform: translateX(-50%);
+  }
+
+  .timeline-card:hover,
+  .timeline-card:active {
+    transform: translateY(var(--parallax));
+    box-shadow: 0 20px 45px rgba(0, 0, 0, 0.12);
   }
 
   .timeline-card::after {
