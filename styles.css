@@ -841,6 +841,36 @@ main > section {
   box-shadow: var(--shadow);
 }
 
+.contact-actions {
+  margin-top: 0.8rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.copy-email-btn {
+  padding: 0.45rem 1.1rem;
+  border-radius: 999px;
+  border: 1px dashed var(--primary);
+  background: transparent;
+  color: var(--primary);
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s ease, color 0.3s ease, border 0.3s ease;
+}
+
+.copy-email-btn:hover,
+.copy-email-btn:focus-visible {
+  background: rgba(0, 191, 166, 0.1);
+}
+
+.contact-status {
+  font-size: 0.9rem;
+  color: var(--muted);
+  min-height: 1.2rem;
+  margin-bottom: 0.6rem;
+}
+
 .contact-cta {
   background: var(--card);
   padding: 1.5rem;
@@ -854,6 +884,22 @@ main > section {
 
 .contact-cta p {
   color: var(--muted);
+}
+
+.contact-highlights {
+  margin: 0.5rem 0 0.7rem;
+  padding-left: 1.2rem;
+  color: var(--text);
+}
+
+.contact-highlights li {
+  margin-bottom: 0.3rem;
+  color: var(--muted);
+}
+
+.cta-note {
+  font-size: 0.9rem;
+  margin-top: -0.4rem;
 }
 
 .submit-btn {

@@ -252,3 +252,86 @@ window.addEventListener("scroll", () => {
 backToTop.addEventListener("click", () => {
   window.scrollTo({ top: 0, behavior: "smooth" });
 });
+
+// ==========================
+// Secure Contact Buttons
+// ==========================
+const contactTrigger = document.getElementById("contactTrigger");
+const copyEmailBtn = document.getElementById("copyEmailBtn");
+const contactStatus = document.getElementById("contactStatus");
+
+const secretEmail = String.fromCharCode(
+  107,
+  119,
+  97,
+  98,
+  101,
+  110,
+  97,
+  111,
+  112,
+  111,
+  107,
+  117,
+  106,
+  110,
+  114,
+  64,
+  103,
+  109,
+  97,
+  105,
+  108,
+  46,
+  99,
+  111,
+  109
+);
+const mailSubject = "Portfolio Inquiry";
+const mailtoLink = `mailto:${secretEmail}?subject=${encodeURIComponent(
+  mailSubject
+)}`;
+
+const updateContactStatus = (message) => {
+  if (contactStatus) {
+    contactStatus.textContent = message;
+  }
+};
+
+if (contactTrigger) {
+  contactTrigger.addEventListener("click", () => {
+    window.location.href = mailtoLink;
+    updateContactStatus("Launching your email client...");
+  });
+}
+
+if (copyEmailBtn) {
+  copyEmailBtn.addEventListener("click", async () => {
+    if (navigator.clipboard?.writeText) {
+      try {
+        await navigator.clipboard.writeText(secretEmail);
+        updateContactStatus("Email copied. Paste it where you need it.");
+      } catch (error) {
+        console.warn("Clipboard copy failed", error);
+        updateContactStatus("Copy failed. Try the email button instead.");
+      }
+      return;
+    }
+
+    const textArea = document.createElement("textarea");
+    textArea.value = secretEmail;
+    textArea.style.position = "fixed";
+    textArea.style.opacity = "0";
+    document.body.appendChild(textArea);
+    textArea.focus();
+    textArea.select();
+    try {
+      document.execCommand("copy");
+      updateContactStatus("Email copied. Paste it where you need it.");
+    } catch (error) {
+      console.warn("Legacy copy failed", error);
+      updateContactStatus("Copy failed. Try the email button instead.");
+    }
+    document.body.removeChild(textArea);
+  });
+}

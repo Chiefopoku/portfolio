@@ -61,9 +61,7 @@
           <a class="nav-link" href="#skills">Skills</a>
           <a class="nav-link" href="#projects">Projects</a>
           <a class="nav-link" href="#contact">Contact</a>
-          <a class="nav-link nav-cta" href="mailto:kwabenaopokujnr@gmail.com"
-            >Hire Me</a
-          >
+          <a class="nav-link nav-cta" href="#contact">Hire Me</a>
         </nav>
       </div>
     </header>
@@ -465,10 +463,23 @@
         <div class="contact-grid">
           <div class="contact-details">
             <p>
-              <i class="fas fa-envelope"></i>
-              <a href="mailto:kwabenaopokujnr@gmail.com"
-                >kwabenaopokujnr@gmail.com</a
-              >
+              <strong>Prefer email?</strong> Tap the secure button below and
+              your device will generate a fresh message to my address
+            </p>
+            <div
+              class="contact-actions"
+              role="group"
+              aria-label="Request or copy my email address"
+            >
+              <button id="contactTrigger" class="btn submit-btn" type="button">
+                Email Me Securely
+              </button>
+              <button id="copyEmailBtn" class="copy-email-btn" type="button">
+                Copy Email
+              </button>
+            </div>
+            <p id="contactStatus" class="contact-status" aria-live="polite">
+              Email link is generated only when requested.
             </p>
             <p>
               <i class="fab fa-github"></i>
@@ -480,9 +491,15 @@
           </div>
           <div class="contact-cta">
             <p>Ready to collaborate or need more details?</p>
-            <a class="btn submit-btn" href="mailto:kwabenaopokujnr@gmail.com"
-              >Send Message</a
-            >
+            <ul class="contact-highlights">
+              <li>Response guaranteed within 48 hours.</li>
+              <li>Happy to join calls across EST or GMT.</li>
+              <li>Project outlines or CV requests welcome.</li>
+            </ul>
+            <p class="cta-note">
+              Contact button above keeps the email hidden from bots while
+              staying simple for humans.
+            </p>
           </div>
         </div>
       </section>
@@ -492,7 +509,7 @@
       <p>&copy; 2025 Emmanuel Opoku-Adjei | Designed with ❤️ and science.</p>
       <div class="footer-links">
         <a href="#hero">Back to top</a>
-        <a href="mailto:kwabenaopokujnr@gmail.com">Email</a>
+        <a href="#contact">Contact</a>
         <a
           href="https://github.com/Chiefopoku"
           target="_blank"
