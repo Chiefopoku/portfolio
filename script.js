@@ -1,15 +1,23 @@
 // ==========================
-// Smooth Scrolling Navigation
+// Smooth Scrolling Navigation (offset for the sticky header)
 // ==========================
-document.querySelectorAll("nav a").forEach((anchor) => {
+function scrollToSection(hash) {
+  const target = document.querySelector(hash);
+  if (!target) return;
+  const header = document.querySelector("header");
+  const offset = (header ? header.getBoundingClientRect().height : 0) + 12;
+  const top = target.getBoundingClientRect().top + window.scrollY - offset;
+  window.scrollTo({ top: Math.max(0, top), behavior: "smooth" });
+  history.replaceState(null, "", hash);
+}
+
+document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
   anchor.addEventListener("click", (e) => {
     const href = anchor.getAttribute("href");
-    if (href && href.startsWith("#")) {
+    if (!href || href === "#") return;
+    if (document.querySelector(href)) {
       e.preventDefault();
-      const target = document.querySelector(href);
-      if (target) {
-        target.scrollIntoView({ behavior: "smooth", block: "start" });
-      }
+      scrollToSection(href);
     }
   });
 });
@@ -86,9 +94,9 @@ window.addEventListener("scroll", () => {
 // ==========================
 const typingText = document.getElementById("typing-text");
 const phrases = [
-  "Nurse. Researcher. Innovator.",
-  "Exploring Nanoscience & Healthcare.",
-  "Building Technology for Better Health.",
+  "Registered nurse. Laboratory scientist.",
+  "Measuring how microbes hold on to surfaces.",
+  "Antimicrobial resistance, surfaces and water.",
 ];
 let phraseIndex = 0,
   letterIndex = 0,
@@ -197,45 +205,33 @@ if (parallaxCards.length) {
 }
 
 // ==========================
-// Header Scroll Effects & Scroll Spy
+// Header Scroll Effects & Scroll Spy (position based)
 // ==========================
-const navLinks = document.querySelectorAll(".nav-link[href^='#']");
-const sectionMap = {};
+const navLinks = Array.from(document.querySelectorAll(".nav-link[href^='#']"));
+const spySections = navLinks
+  .map((link) => ({ link, section: document.querySelector(link.getAttribute("href")) }))
+  .filter((x) => x.section);
 
-navLinks.forEach((link) => {
-  const id = link.getAttribute("href");
-  const section = document.querySelector(id);
-  if (section) {
-    sectionMap[id] = { section, link };
+function updateActiveNav() {
+  const header = document.querySelector("header");
+  const line = (header ? header.getBoundingClientRect().height : 0) + window.innerHeight * 0.25;
+  let current = null;
+  spySections.forEach((x) => {
+    if (x.section.getBoundingClientRect().top <= line) current = x;
+  });
+  // at the very bottom, highlight the last section
+  if (window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 4) {
+    current = spySections[spySections.length - 1];
   }
-});
-
-function setActiveNav(id) {
-  navLinks.forEach((link) => link.classList.remove("active"));
-  if (sectionMap[id]) {
-    sectionMap[id].link.classList.add("active");
-  }
+  navLinks.forEach((l) => l.classList.remove("active"));
+  if (current && !current.link.classList.contains("nav-cta")) current.link.classList.add("active");
 }
 
-const spyObserver = new IntersectionObserver(
-  (entries) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        setActiveNav(`#${entry.target.id}`);
-      }
-    });
-  },
-  { threshold: 0.4 }
-);
-
-Object.values(sectionMap).forEach(({ section }) =>
-  spyObserver.observe(section)
-);
-
 window.addEventListener("scroll", () => {
-  if (!siteHeader) return;
-  siteHeader.classList.toggle("header-scrolled", window.scrollY > 40);
-});
+  if (siteHeader) siteHeader.classList.toggle("header-scrolled", window.scrollY > 40);
+  updateActiveNav();
+}, { passive: true });
+updateActiveNav();
 
 // ==========================
 // Back-to-Top Button

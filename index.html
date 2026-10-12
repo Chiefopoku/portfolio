@@ -3,38 +3,77 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Emmanuel Opoku-Adjei | Portfolio</title>
+    <title>Emmanuel Opoku-Adjei | Microbial Adhesion, AMR & Water</title>
     <meta
       name="description"
-      content="Registered General Nurse and aspiring Nanoscientist fusing compassionate care with scientific innovation."
+      content="Emmanuel Opoku-Adjei: registered nurse turned laboratory scientist. MS Nanoscience at UNC Greensboro researching how microbes attach to surfaces, with a focus on antimicrobial resistance and water."
     />
     <meta name="theme-color" content="#00bfa6" />
-    <meta property="og:title" content="Emmanuel Opoku-Adjei | Portfolio" />
+    <meta property="og:title" content="Emmanuel Opoku-Adjei | Microbial Adhesion, AMR & Water" />
     <meta
       property="og:description"
-      content="Showcasing healthcare leadership, nanoscience research, and human-centered technology projects."
+      content="Research on microbial adhesion to surfaces, antimicrobial resistance and water, from a registered nurse turned laboratory scientist."
     />
     <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://chiefopoku-portfolio.com" />
+    <meta property="og:url" content="https://chiefopoku.github.io/portfolio/" />
+    <meta property="og:image" content="https://chiefopoku.github.io/portfolio/assets/og_preview.jpg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Emmanuel Opoku-Adjei in the lab at JSNN, UNC Greensboro" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="author" content="Emmanuel Opoku-Adjei" />
+    <link rel="canonical" href="https://chiefopoku.github.io/portfolio/" />
+    <link rel="icon" type="image/svg+xml" href="./assets/favicon.svg" />
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Emmanuel Opoku-Adjei",
+  "url": "https://chiefopoku.github.io/portfolio/",
+  "image": "https://chiefopoku.github.io/portfolio/assets/Emmanuel_lab_JSNN.jpg",
+  "jobTitle": "Graduate Research Assistant",
+  "affiliation": {
+    "@type": "CollegeOrUniversity",
+    "name": "University of North Carolina at Greensboro"
+  },
+  "knowsAbout": [
+    "Microbial adhesion",
+    "Antimicrobial resistance",
+    "Water quality",
+    "Environmental microbiology"
+  ],
+  "sameAs": [
+    "https://orcid.org/0009-0008-2895-8719",
+    "https://www.linkedin.com/in/emmanuelopokuadjei/",
+    "https://scholar.google.com/citations?user=_1tc9A8AAAAJ",
+    "https://www.researchgate.net/profile/Emmanuel-Opoku-Adjei",
+    "https://github.com/Chiefopoku"
+  ]
+}
+    </script>
     <link rel="stylesheet" href="./styles.css" />
+    <link rel="stylesheet" href="./modern.css?v=10" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap"
       rel="stylesheet"
     />
-    <script
-      src="https://kit.fontawesome.com/a2b5c2b7f2.js"
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
       crossorigin="anonymous"
-    ></script>
+      referrerpolicy="no-referrer"
+    />
   </head>
   <body>
+    <div id="scrollProgress" aria-hidden="true"></div>
     <header class="glass">
       <div class="container header-content">
         <div class="header-top">
           <div class="brand">
             <h1>Emmanuel Opoku-Adjei</h1>
-            <p>Nurse | Nanoscientist</p>
+            <p>Microbiology · Antimicrobial Resistance · Water</p>
           </div>
           <div class="header-controls">
             <button id="themeToggle" aria-label="Toggle light and dark theme">
@@ -55,22 +94,24 @@
         </div>
         <nav id="primaryNav" aria-label="Primary">
           <a class="nav-link" href="#about">About</a>
-          <a class="nav-link" href="#highlights">Highlights</a>
+          <a class="nav-link" href="#interests">Interests</a>
+          <a class="nav-link" href="#research">Research</a>
+          <a class="nav-link" href="#publications">Publications</a>
+          <a class="nav-link" href="#honors">Honors</a>
+          <a class="nav-link" href="#journey">Experience</a>
+          <a class="nav-link" href="#gallery">Gallery</a>
           <a class="nav-link" href="#cv">CV</a>
-          <a class="nav-link" href="#visuals">Visuals</a>
-          <a class="nav-link" href="#skills">Skills</a>
-          <a class="nav-link" href="#projects">Projects</a>
-          <a class="nav-link" href="#contact">Contact</a>
-          <a class="nav-link nav-cta" href="#contact">Hire Me</a>
+          <a class="nav-link nav-cta" href="#contact">Contact</a>
         </nav>
       </div>
     </header>
 
     <section id="hero" aria-labelledby="hero-title">
+      <canvas id="microbeCanvas" aria-hidden="true"></canvas>
       <div class="hero-overlay"></div>
       <div class="hero-content">
         <img
-          src="./assets/IMG_7385_2.jpg"
+          src="./assets/portrait_480.jpg"
           alt="Portrait of Emmanuel Opoku-Adjei"
           class="hero-img"
           loading="eager"
@@ -78,257 +119,341 @@
         <h2 id="hero-title">Hello, I'm <span>Emmanuel Opoku-Adjei</span></h2>
         <h3 id="typing-text" aria-live="polite"></h3>
         <p>
-          Integrating technology, innovation, and compassion to improve
-          healthcare outcomes.
+          A registered nurse turned laboratory scientist, studying how microbes
+          attach to surfaces and what that means for infection, resistance and
+          the water people use.
         </p>
         <ul class="hero-badges" aria-label="Career highlights">
           <li>
-            <span class="badge-number" data-count="3" data-suffix="+">0</span>
-            Years of clinical expertise
+            <span class="badge-number" data-count="2">2</span>
+            Years of clinical nursing
           </li>
           <li>
-            <span class="badge-number" data-count="5" data-suffix="+">0</span>
-            Cross-disciplinary research projects
+            <span class="badge-number" data-count="2">2</span>
+            Papers: one published, one submitted
           </li>
           <li>
-            <span class="badge-number" data-count="2" data-suffix="+">0</span>
-            Technology pilots in care settings
+            <span class="badge-number" data-count="4" data-suffix=".00">4.00</span>
+            MS GPA, UNC Greensboro
           </li>
         </ul>
         <div class="hero-cta">
-          <a href="#projects" class="btn">Explore My Work</a>
-          <a href="#contact" class="btn btn-outline">Let's Collaborate</a>
+          <a href="#research" class="btn">See My Research</a>
+          <a href="#contact" class="btn btn-outline">Get in Touch</a>
         </div>
+        <p class="hero-hint">
+          Move your cursor over the cells: like microbes on a surface, they
+          stick. Click to add more.
+        </p>
       </div>
+      <a href="#about" class="scroll-cue" aria-label="Scroll to About"></a>
     </section>
 
     <main id="mainContent">
       <section id="about" class="fade-in">
         <h2>About Me</h2>
+        <div class="about-layout">
+          <figure class="about-photo">
+            <img
+              src="./assets/Emmanuel_lab_JSNN.jpg"
+              alt="Emmanuel Opoku-Adjei in a lab coat and safety glasses at the Joint School of Nanoscience and Nanoengineering"
+              loading="lazy"
+            />
+            <figcaption>In the lab at JSNN, UNC Greensboro</figcaption>
+          </figure>
         <div class="about-card">
           <p class="about-lead">
-            I am Emmanuel Opoku-Adjei, a Registered General Nurse and aspiring
-            Nanoscientist driven to merge compassionate care with emerging
-            technology. My journey from bedside leadership to nanoscale
-            exploration fuels a mission to revolutionize healthcare delivery.
+            As a nurse in Ghana, the infections that worried me most were the
+            ones growing on implants. That question, why some surfaces are
+            easier for microbes to colonise, took me from the ward to the lab.
           </p>
           <p>
-            Currently pursuing an M.S. in Nanoscience at the University of North
-            Carolina at Greensboro, I focus on translating biomedical research
-            into clinically viable solutions. My work spans nanomaterials for
-            antimicrobial therapy, biosensor development, diagnostic
-            nanodevices, and machine learning for biological data—disciplines
-            poised to shape personalized and preventive medicine.
+            I am completing an M.S. in Nanoscience at UNC Greensboro (May 2027),
+            and next I want to study antimicrobial resistance in water,
+            including how metals in mining-affected water may help it persist.
           </p>
-          <p>
-            Beyond academia, I contribute as a research assistant and software
-            enthusiast, building health management platforms, clinical data
-            tools, and digital interfaces that enhance accessibility and
-            accuracy in global health systems. Each project blends nursing
-            intuition with data-driven rigor.
-          </p>
-          <div class="about-focus">
-            <h3>Focus Areas</h3>
-            <ul>
-              <li>Nanomaterials for antimicrobial therapy</li>
-              <li>Biosensors & diagnostic nanodevices</li>
-              <li>Machine learning for biological data</li>
-              <li>Human-centered clinical software & data tools</li>
-            </ul>
+        </div>
+        </div>
+      </section>
+
+
+
+      <section id="news" class="fade-in">
+        <h2>News</h2>
+        <ul class="news-list">
+          <li><span class="news-date">Oct 2026</span> <span class="news-text">Methods paper on the Beads Adhesion Precipitation (BAP) assay submitted to <em>Current Protocols</em> (second author).</span></li>
+          <li><span class="news-date">Feb 2026</span> <span class="news-text">Invited talk at the JSNN Graduate Research Retreat as the department&rsquo;s MS-level speaker.</span></li>
+          <li><span class="news-date">2025</span> <span class="news-text">Co-authored paper published in <em>Geriatric Nursing</em>.</span></li>
+          <li><span class="news-date">Aug 2025</span> <span class="news-text">Began the M.S. in Nanoscience at the Joint School of Nanoscience and Nanoengineering, UNC Greensboro.</span></li>
+        </ul>
+      </section>
+
+      <section id="interests" class="fade-in">
+        <h2>Research Interests</h2>
+        <div class="skills-grid interests-grid">
+          <div class="card">
+            <h3><i class="fas fa-bacteria"></i> Microbial adhesion and surfaces</h3>
+            <p>How surfaces, and the films that coat them, decide whether microbes attach. Adhesion is the first step toward biofilms and device infections.</p>
           </div>
-          <p class="about-closing">
-            My experience across hospitals and research labs reinforces a belief
-            that empathy and innovation must coexist. This portfolio captures an
-            evolving path from bedside care to nanoscale discovery—where
-            curiosity and compassion guide the next wave of healthcare
-            breakthroughs.
-          </p>
+          <div class="card">
+            <h3><i class="fas fa-water"></i> Antimicrobial resistance in water</h3>
+            <p>How resistant bacteria and resistance genes persist and move through rivers, wastewater and reused water.</p>
+          </div>
+          <div class="card">
+            <h3><i class="fas fa-mountain"></i> Metals and mining-affected water</h3>
+            <p>Whether metals released by mining help keep antimicrobial resistance in circulation in rivers and groundwater.</p>
+          </div>
+          <div class="card">
+            <h3><i class="fas fa-hospital"></i> Healthcare surfaces and disinfection</h3>
+            <p>How fungal pathogens such as <em>Candida auris</em> persist on hospital surfaces, and what partial disinfection does to them.</p>
+          </div>
+          <div class="card">
+            <h3><i class="fas fa-chart-area"></i> From measurement to public health risk</h3>
+            <p>Turning lab and field measurements into estimates of risk that can guide monitoring, regulation and policy.</p>
+          </div>
+          <div class="card">
+            <h3><i class="fas fa-globe-africa"></i> One Health and Ghana</h3>
+            <p>Linking clinical and environmental resistance, and helping build environmental surveillance capacity in Ghana.</p>
+          </div>
         </div>
       </section>
 
-      <section id="highlights" class="fade-in">
-        <h2>Impact Highlights</h2>
-        <div class="stats-grid">
-          <article class="stat-card">
-            <p class="stat-label">Patients Supported</p>
-            <p class="stat-value">
-              <span
-                class="stat-number"
-                data-count="500"
-                data-suffix="+"
-                aria-label="Over 500 patients supported"
-                >0</span
-              >
+      <section id="research" class="fade-in">
+        <h2>Current Research</h2>
+        <div class="skills-grid">
+          <div class="card">
+            <h3><i class="fas fa-layer-group"></i> Conditioned surfaces</h3>
+            <p>
+              Does material secreted by <em>Candida</em> onto a surface change
+              how bacteria attach to it?
             </p>
-            <p class="stat-detail">
-              Acute, critical care, and community health engagements.
+          </div>
+          <div class="card">
+            <h3><i class="fas fa-spray-can"></i> Disinfectant exposure</h3>
+            <p>
+              Does low-level exposure to cleaning agents change how
+              <em>Candida auris</em> attaches to surfaces?
             </p>
-          </article>
-          <article class="stat-card">
-            <p class="stat-label">Research Citations</p>
-            <p class="stat-value">
-              <span class="stat-number" data-count="10" data-suffix="+">0</span>
+          </div>
+          <div class="card">
+            <h3><i class="fas fa-flask"></i> Methods</h3>
+            <p>
+              Second author on a rapid adhesion assay, submitted to
+              <em>Current Protocols</em>.
             </p>
-            <p class="stat-detail">
-              Peer-reviewed publications and conference proceedings.
-            </p>
-          </article>
-          <article class="stat-card">
-            <p class="stat-label">Workshops Facilitated</p>
-            <p class="stat-value">
-              <span class="stat-number" data-count="10" data-suffix="+">0</span>
-            </p>
-            <p class="stat-detail">
-              Training nurses on digital tools, leadership, and patient safety.
-            </p>
-          </article>
-          <article class="stat-card">
-            <p class="stat-label">Tech Deployments</p>
-            <p class="stat-value">
-              <span class="stat-number" data-count="3" data-suffix="+">0</span>
-            </p>
-            <p class="stat-detail">
-              From wearable prototypes to machine-learning dashboards.
-            </p>
-          </article>
+          </div>
         </div>
       </section>
 
-      <section id="cv" class="fade-in">
-        <h2>Download My CV</h2>
-        <div class="cv-card">
+      <section id="publications" class="fade-in">
+        <h2>Publications</h2>
+        <div class="about-card pub-list">
           <p>
-            Detailed experience, publications, and certifications are captured
-            in my full curriculum vitae. Keep the downloadable copy updated here
-            while the website stays focused on the essentials.
+            Karim, M. A., <strong>Opoku-Adjei, E.</strong>, Mclaughlin, L.,
+            Adegoke, S. C., &amp; LaJeunesse, D. Beads Adhesion Precipitation
+            (BAP) Assay: a simple and rapid method to quantify microbe/surface
+            adhesion. <em>Submitted to Current Protocols.</em>
           </p>
-          <div class="cv-actions">
+          <p>
+            Osei, E. A., Addasah, F., Oware, J., Ani-Amponsah, M., Acquah, A.,
+            Amoah, E. O., Afoakwa-Acheampong, C., &amp;
+            <strong>Opoku-Adjei, E.</strong> (2025). Prioritizing care and
+            addressing distinct needs of older adults with disabilities in Ghana
+            amidst challenges. <em>Geriatric Nursing</em>, 65, 103524.
             <a
-              id="cvDownload"
-              class="btn"
-              href="./assets/Emmanuel Opoku- Adjei_CV current.pdf"
-              download
-              >Download CV</a
+              href="https://doi.org/10.1016/j.gerinurse.2025.103524"
+              target="_blank"
+              rel="noopener noreferrer"
+              >doi:10.1016/j.gerinurse.2025.103524</a
             >
-          </div>
+          </p>
+          <p class="pub-links">
+            <a
+              href="https://scholar.google.com/citations?user=_1tc9A8AAAAJ"
+              target="_blank"
+              rel="noopener noreferrer"
+              ><i class="fas fa-graduation-cap"></i> Google Scholar</a
+            >
+            <a
+              href="https://www.researchgate.net/profile/Emmanuel-Opoku-Adjei"
+              target="_blank"
+              rel="noopener noreferrer"
+              ><i class="fab fa-researchgate"></i> ResearchGate</a
+            >
+            <a
+              href="https://orcid.org/0009-0008-2895-8719"
+              target="_blank"
+              rel="noopener noreferrer"
+              ><i class="fab fa-orcid"></i> ORCID</a
+            >
+          </p>
         </div>
       </section>
 
-      <section id="visuals" class="fade-in">
-        <h2>Visual Story</h2>
-        <p class="visuals-intro">
-          A journey from compassionate nursing practice to nanoscience-driven
-          healthcare innovation.
-        </p>
-        <div class="visual-timeline">
-          <article
-            class="timeline-card"
-            data-stage="01"
-            data-parallax-speed="0.2"
-          >
-            <figure>
-              <img
-                src="https://images.unsplash.com/photo-1504439468489-c8920d796a29?auto=format&fit=crop&w=500&q=80"
-                alt="Nurse comforting patient"
-                loading="lazy"
-              />
-              <figcaption>Nursing Beginnings</figcaption>
-            </figure>
-            <p>
-              Grounded in bedside care, empathy, and evidence-based nursing
-              leadership.
-            </p>
-          </article>
-          <article
-            class="timeline-card"
-            data-stage="02"
-            data-parallax-speed="0.35"
-          >
-            <figure>
-              <img
-                src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=500&q=80"
-                alt="Graduate celebrating success"
-                loading="lazy"
-              />
-              <figcaption>Academic Excellence</figcaption>
-            </figure>
-            <p>
-              Honed clinical research, leadership, and scientific rigor during
-              nursing studies.
-            </p>
-          </article>
-          <article
-            class="timeline-card"
-            data-stage="03"
-            data-parallax-speed="0.45"
-          >
-            <figure>
-              <img
-                src="https://images.unsplash.com/photo-1472220625704-91e1462799b2?auto=format&fit=crop&w=500&q=80"
-                alt="Developer working with code"
-                loading="lazy"
-              />
-              <figcaption>Tech Exploration</figcaption>
-            </figure>
-            <p>
-              Built digital health products and data tools that connect
-              patients, clinicians, and insights.
-            </p>
-          </article>
-          <article
-            class="timeline-card"
-            data-stage="04"
-            data-parallax-speed="0.25"
-          >
-            <figure>
-              <img
-                src="https://images.unsplash.com/photo-1581090464777-f3220bbe1b8b?auto=format&fit=crop&w=500&q=80"
-                alt="Nanoscience lab workspace"
-                loading="lazy"
-              />
-              <figcaption>Nanoscience Journey</figcaption>
-            </figure>
-            <p>
-              Exploring nanoscale materials for antimicrobial therapy and smart
-              diagnostics.
-            </p>
-          </article>
-          <article
-            class="timeline-card"
-            data-stage="05"
-            data-parallax-speed="0.4"
-          >
-            <figure>
-              <img
-                src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=500&q=80"
-                alt="Researcher analyzing data"
-                loading="lazy"
-              />
-              <figcaption>Research Innovation</figcaption>
-            </figure>
-            <p>
-              Integrating biosensors, machine learning, and lab automation to
-              advance precision health.
-            </p>
-          </article>
-          <article
-            class="timeline-card"
-            data-stage="06"
-            data-parallax-speed="0.3"
-          >
-            <figure>
-              <img
-                src="https://images.unsplash.com/photo-1521791136064-7986c2920216?auto=format&fit=crop&w=500&q=80"
-                alt="Futuristic healthcare interface"
-                loading="lazy"
-              />
-              <figcaption>Future Vision</figcaption>
-            </figure>
-            <p>
-              Designing human-centered, nanotech-enabled care systems that blend
-              innovation with empathy.
-            </p>
-          </article>
+
+      <section id="honors" class="fade-in">
+        <h2>Honors &amp; Talks</h2>
+        <div class="honors-layout">
+          <figure class="talk-card card">
+            <img
+              src="./assets/JSNN_retreat_talk_2026.jpg"
+              alt="Emmanuel Opoku-Adjei speaking at the JSNN podium during the Graduate Research Retreat"
+              loading="lazy"
+            />
+            <figcaption>
+              <strong>Bridging Clinical Care &amp; Nanoscience: Research Progress</strong>
+              <span>Invited talk &middot; JSNN Graduate Research Retreat &middot; 20 February 2026</span>
+              <span>Selected by the Department Chair as the sole MS-level speaker for Nanoscience.</span>
+            </figcaption>
+          </figure>
+          <ul class="honors-list">
+            <li><i class="fas fa-award"></i><div><strong>Valedictorian</strong><span>Overall Best Student, 2022 graduating class, Valley View University</span></div></li>
+            <li><i class="fas fa-user-nurse"></i><div><strong>Best Graduating Student in Nursing</strong><span>BSc Nursing, First Class Honours, 2022</span></div></li>
+            <li><i class="fas fa-microphone"></i><div><strong>Invited MS representative speaker</strong><span>JSNN Graduate Research Retreat, 2026</span></div></li>
+            <li><i class="fas fa-certificate"></i><div><strong>Responsible Conduct of Research</strong><span>CITI Program, 2026</span></div></li>
+            <li><i class="fas fa-shield-heart"></i><div><strong>Basic Certificate in Quality and Safety</strong><span>Institute for Healthcare Improvement, 2025</span></div></li>
+          </ul>
+        </div>
+      </section>
+
+      <section id="journey" class="fade-in">
+        <h2>Experience</h2>
+        <p class="visuals-intro">From the ward to the laboratory.</p>
+        <div class="gallery-filters xp-filters" role="group" aria-label="Filter experience">
+          <button class="chip active" data-xp="all" type="button">All</button>
+          <button class="chip" data-xp="research" type="button">Research</button>
+          <button class="chip" data-xp="clinical" type="button">Clinical</button>
+          <button class="chip" data-xp="education" type="button">Education</button>
+        </div>
+        <ol class="xp">
+          <li class="xp-item" data-cat="research">
+            <span class="xp-dot" aria-hidden="true"><i class="fas fa-microscope"></i></span>
+            <article class="xp-card">
+              <div class="xp-head">
+                <span class="xp-date">Aug 2025 &ndash; Present</span>
+                <span class="xp-type xp-research">Research</span>
+              </div>
+              <h3>Graduate Research Assistant</h3>
+              <p class="xp-org">Joint School of Nanoscience and Nanoengineering, UNC Greensboro</p>
+              <p class="xp-desc">Studying how microbes attach to mineral surfaces in Professor Dennis LaJeunesse&rsquo;s lab. I built a quantitative adhesion assay and am second author on a methods paper submitted to <em>Current Protocols</em>.</p>
+              <ul class="xp-tags"><li>Microbial culture</li><li>Adhesion assays</li><li>Spectrophotometry</li><li>Python</li></ul>
+            </article>
+          </li>
+          <li class="xp-item" data-cat="education">
+            <span class="xp-dot" aria-hidden="true"><i class="fas fa-graduation-cap"></i></span>
+            <article class="xp-card">
+              <div class="xp-head">
+                <span class="xp-date">Expected May 2027</span>
+                <span class="xp-type xp-education">Education</span>
+              </div>
+              <h3>M.S. Nanoscience</h3>
+              <p class="xp-org">UNC Greensboro</p>
+              <p class="xp-desc">Graduate study in nanoscience with a research focus on microbe&ndash;surface interactions. GPA 4.00.</p>
+              <ul class="xp-tags"><li>Nanoscience</li><li>Research design</li></ul>
+            </article>
+          </li>
+          <li class="xp-item" data-cat="clinical">
+            <span class="xp-dot" aria-hidden="true"><i class="fas fa-user-nurse"></i></span>
+            <article class="xp-card">
+              <div class="xp-head">
+                <span class="xp-date">Jul 2024 &ndash; Jul 2025</span>
+                <span class="xp-type xp-clinical">Clinical</span>
+              </div>
+              <h3>Nursing Officer, Orthopaedic &amp; Post-Surgical Care</h3>
+              <p class="xp-org">FOCOS Orthopaedic Hospital, Accra</p>
+              <p class="xp-desc">Cared for patients after orthopaedic surgery, watched surgical sites for implant-related infection, and documented and escalated adverse events.</p>
+              <ul class="xp-tags"><li>Infection monitoring</li><li>Adverse-event reporting</li><li>Patient care</li></ul>
+            </article>
+          </li>
+          <li class="xp-item" data-cat="research">
+            <span class="xp-dot" aria-hidden="true"><i class="fas fa-chalkboard-user"></i></span>
+            <article class="xp-card">
+              <div class="xp-head">
+                <span class="xp-date">Sep 2022 &ndash; Jun 2024</span>
+                <span class="xp-type xp-research">Research</span>
+              </div>
+              <h3>Research &amp; Teaching Assistant</h3>
+              <p class="xp-org">Valley View University, Ghana</p>
+              <p class="xp-desc">Supported health-services research from study design to manuscript, leading to a co-authored paper in <em>Geriatric Nursing</em>, and helped teach undergraduate nursing classes and lab sessions.</p>
+              <ul class="xp-tags"><li>Study design</li><li>SPSS</li><li>Teaching</li></ul>
+            </article>
+          </li>
+          <li class="xp-item" data-cat="clinical">
+            <span class="xp-dot" aria-hidden="true"><i class="fas fa-hospital"></i></span>
+            <article class="xp-card">
+              <div class="xp-head">
+                <span class="xp-date">Jan 2023 &ndash; Jan 2024</span>
+                <span class="xp-type xp-clinical">Clinical</span>
+              </div>
+              <h3>Registered General Nurse, Medical-Surgical</h3>
+              <p class="xp-org">Shai Osudoku District Hospital, Ghana</p>
+              <p class="xp-desc">Medical-surgical nursing with responsibility for infection prevention and antimicrobial administration. Contributed to quality improvement and trained junior staff and students.</p>
+              <ul class="xp-tags"><li>Infection prevention</li><li>Quality improvement</li><li>Mentoring</li></ul>
+            </article>
+          </li>
+          <li class="xp-item" data-cat="education">
+            <span class="xp-dot" aria-hidden="true"><i class="fas fa-award"></i></span>
+            <article class="xp-card">
+              <div class="xp-head">
+                <span class="xp-date">2022</span>
+                <span class="xp-type xp-education">Education</span>
+              </div>
+              <h3>BSc Nursing, First Class Honours</h3>
+              <p class="xp-org">Valley View University, Ghana</p>
+              <p class="xp-desc">Valedictorian and Best Graduating Student in Nursing. My final-year project was a 212-respondent survey study, my first piece of research.</p>
+              <ul class="xp-tags"><li>Valedictorian</li><li>Survey research</li></ul>
+            </article>
+          </li>
+        </ol>
+      </section>
+
+
+      <section id="gallery" class="fade-in">
+        <h2>Gallery</h2>
+        <div class="gallery-filters" role="group" aria-label="Filter photos">
+          <button class="chip active" data-filter="all" type="button">All</button>
+          <button class="chip" data-filter="lab" type="button">Lab</button>
+          <button class="chip" data-filter="clinical" type="button">Clinical</button>
+          <button class="chip" data-filter="milestones" type="button">Milestones</button>
+          <button class="chip" data-filter="life" type="button">Life</button>
+        </div>
+        <div class="gallery-grid">
+          <button class="gallery-item" data-cat="lab" data-full="./assets/gallery/g01.jpg" data-caption="In the lab at JSNN" type="button" aria-label="Open photo: In the lab at JSNN">
+            <img src="./assets/gallery/g01_t.jpg" alt="In the lab at JSNN" loading="lazy" />
+            <span class="gallery-cap">In the lab at JSNN</span>
+          </button>
+          <button class="gallery-item" data-cat="lab" data-full="./assets/gallery/g02.jpg" data-caption="At the bench, JSNN" type="button" aria-label="Open photo: At the bench, JSNN">
+            <img src="./assets/gallery/g02_t.jpg" alt="At the bench, JSNN" loading="lazy" />
+            <span class="gallery-cap">At the bench, JSNN</span>
+          </button>
+          <button class="gallery-item" data-cat="lab" data-full="./assets/gallery/g03.jpg" data-caption="Lab work, JSNN" type="button" aria-label="Open photo: Lab work, JSNN">
+            <img src="./assets/gallery/g03_t.jpg" alt="Lab work, JSNN" loading="lazy" />
+            <span class="gallery-cap">Lab work, JSNN</span>
+          </button>
+          <button class="gallery-item" data-cat="lab" data-full="./assets/gallery/g04.jpg" data-caption="Among the reagents" type="button" aria-label="Open photo: Among the reagents">
+            <img src="./assets/gallery/g04_t.jpg" alt="Among the reagents" loading="lazy" />
+            <span class="gallery-cap">Among the reagents</span>
+          </button>
+          <button class="gallery-item" data-cat="lab" data-full="./assets/gallery/g05.jpg" data-caption="At JSNN, UNC Greensboro" type="button" aria-label="Open photo: At JSNN, UNC Greensboro">
+            <img src="./assets/gallery/g05_t.jpg" alt="At JSNN, UNC Greensboro" loading="lazy" />
+            <span class="gallery-cap">At JSNN, UNC Greensboro</span>
+          </button>
+          <button class="gallery-item" data-cat="clinical" data-full="./assets/gallery/g06.jpg" data-caption="My nursing years" type="button" aria-label="Open photo: My nursing years">
+            <img src="./assets/gallery/g06_t.jpg" alt="My nursing years" loading="lazy" />
+            <span class="gallery-cap">My nursing years</span>
+          </button>
+          <button class="gallery-item" data-cat="milestones" data-full="./assets/gallery/g07.jpg" data-caption="Graduation day, Valley View University" type="button" aria-label="Open photo: Graduation day, Valley View University">
+            <img src="./assets/gallery/g07_t.jpg" alt="Graduation day, Valley View University" loading="lazy" />
+            <span class="gallery-cap">Graduation day, Valley View University</span>
+          </button>
+          <button class="gallery-item" data-cat="life" data-full="./assets/gallery/g08.jpg" data-caption="On campus" type="button" aria-label="Open photo: On campus">
+            <img src="./assets/gallery/g08_t.jpg" alt="On campus" loading="lazy" />
+            <span class="gallery-cap">On campus</span>
+          </button>
+          <button class="gallery-item" data-cat="life" data-full="./assets/gallery/g09.jpg" data-caption="A snowy day in Greensboro" type="button" aria-label="Open photo: A snowy day in Greensboro">
+            <img src="./assets/gallery/g09_t.jpg" alt="A snowy day in Greensboro" loading="lazy" />
+            <span class="gallery-cap">A snowy day in Greensboro</span>
+          </button>
         </div>
       </section>
 
@@ -336,48 +461,58 @@
         <h2>Key Skills</h2>
         <div class="skills-grid">
           <div class="card">
-            <h3><i class="fas fa-code"></i> Technical</h3>
+            <h3><i class="fas fa-microscope"></i> Laboratory</h3>
             <ul>
-              <li>Python, JavaScript, C</li>
-              <li>React, HTML, CSS</li>
-              <li>MySQL, Git, GitHub</li>
-              <li>Machine Learning, Data Science</li>
+              <li>Bacterial and fungal culture, aseptic technique</li>
+              <li>Quantitative adhesion assays and control design</li>
+              <li>UV-Vis spectrophotometry, plate-reader fluorescence</li>
+                          </ul>
+          </div>
+          <div class="card">
+            <h3><i class="fas fa-chart-line"></i> Data</h3>
+            <ul>
+              <li>Python (NumPy, Pandas, Matplotlib)</li>
+              <li>GraphPad Prism, SPSS, Excel</li>
+                            <li>Git, GitHub, HTML, CSS, JavaScript</li>
             </ul>
           </div>
           <div class="card">
-            <h3><i class="fas fa-flask"></i> Healthcare & Research</h3>
+            <h3><i class="fas fa-user-nurse"></i> Clinical</h3>
             <ul>
-              <li>Clinical Care & Leadership</li>
-              <li>Nanomaterial Synthesis</li>
-              <li>Microscopy & Spectroscopy</li>
-              <li>Bioinformatics & Data Analysis</li>
-            </ul>
+              <li>Registered General Nurse (Ghana)</li>
+              <li>Infection prevention</li>
+              <li>Adverse-event reporting and quality improvement</li>
+                          </ul>
+          </div>
+        </div>
+      </section>
+
+      <section id="cv" class="fade-in">
+        <h2>Curriculum Vitae</h2>
+        <div class="cv-card">
+          <p>
+            Full education, research, publications, presentations and
+            certifications.
+          </p>
+          <div class="cv-actions">
+            <a
+              id="cvDownload"
+              class="btn"
+              href="./assets/Emmanuel_Opoku-Adjei_CV.pdf"
+              download
+              >Download CV (PDF)</a
+            >
           </div>
         </div>
       </section>
 
       <section id="projects" class="fade-in">
-        <h2>Projects</h2>
+        <h2>I Also Build Tools</h2>
+        <p class="visuals-intro">
+          Web projects from before and alongside my research.
+        </p>
         <div class="project-grid">
           <div class="project-card">
-            <img
-              src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=120&q=80"
-              alt="HealthYou dashboard preview"
-              loading="lazy"
-            />
-            <div class="project-overlay">
-              <p>
-                Built secure patient dashboards, symptom insights, and reminder
-                flows to increase long-term engagement.
-              </p>
-              <a
-                href="https://healthyou-front-end.vercel.app/"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="overlay-link"
-                >View Project</a
-              >
-            </div>
             <h3>
               <a
                 href="https://healthyou-front-end.vercel.app/"
@@ -387,29 +522,10 @@
               >
             </h3>
             <p>
-              Responsive web app that helps patients visualize health goals,
-              track vitals, and chat with providers securely.
+              A web app to help patients follow health goals and track vitals.
             </p>
           </div>
           <div class="project-card">
-            <img
-              src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=120&q=80"
-              alt="Ticktask interface"
-              loading="lazy"
-            />
-            <div class="project-overlay">
-              <p>
-                Task creation, reminders, and real-time collaboration powered by
-                Firebase auth, storage, and cloud functions.
-              </p>
-              <a
-                href="https://ticktask-six.vercel.app/"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="overlay-link"
-                >View Project</a
-              >
-            </div>
             <h3>
               <a
                 href="https://ticktask-six.vercel.app/"
@@ -418,30 +534,9 @@
                 >Ticktask</a
               >
             </h3>
-            <p>
-              Kanban-inspired productivity tool with priority tagging,
-              analytics, and offline-first sync for busy professionals.
-            </p>
+            <p>A task manager with priorities, reminders and collaboration.</p>
           </div>
           <div class="project-card">
-            <img
-              src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=120&q=80"
-              alt="Gulf Consolidated website snapshot"
-              loading="lazy"
-            />
-            <div class="project-overlay">
-              <p>
-                Led the UI refresh, component library, and accessibility
-                improvements for the corporate web experience.
-              </p>
-              <a
-                href="https://www.gulfconsolidated.com/"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="overlay-link"
-                >View Project</a
-              >
-            </div>
             <h3>
               <a
                 href="https://www.gulfconsolidated.com/"
@@ -450,10 +545,7 @@
                 >Gulf Consolidated</a
               >
             </h3>
-            <p>
-              Enterprise marketing site emphasizing rich service pages, custom
-              animations, and lead capture integrations.
-            </p>
+            <p>Front-end work on a corporate website.</p>
           </div>
         </div>
       </section>
@@ -463,8 +555,8 @@
         <div class="contact-grid">
           <div class="contact-details">
             <p>
-              <strong>Prefer email?</strong> Tap the secure button below and
-              your device will generate a fresh message to my address
+              I welcome questions about my research, collaboration and PhD or
+              research opportunities.
             </p>
             <div
               class="contact-actions"
@@ -472,44 +564,83 @@
               aria-label="Request or copy my email address"
             >
               <button id="contactTrigger" class="btn submit-btn" type="button">
-                Email Me Securely
+                Email Me
               </button>
               <button id="copyEmailBtn" class="copy-email-btn" type="button">
                 Copy Email
               </button>
             </div>
-            <p id="contactStatus" class="contact-status" aria-live="polite">
-              Email link is generated only when requested.
+            <p id="contactStatus" class="contact-status" aria-live="polite"></p>
+          </div>
+          <div class="contact-cta">
+            <p>
+              <i class="fas fa-graduation-cap"></i>
+              <a
+                href="https://scholar.google.com/citations?user=_1tc9A8AAAAJ"
+                target="_blank"
+                rel="noopener noreferrer"
+                >Google Scholar</a
+              >
+            </p>
+            <p>
+              <i class="fab fa-researchgate"></i>
+              <a
+                href="https://www.researchgate.net/profile/Emmanuel-Opoku-Adjei"
+                target="_blank"
+                rel="noopener noreferrer"
+                >ResearchGate</a
+              >
+            </p>
+            <p>
+              <i class="fab fa-orcid"></i>
+              <a
+                href="https://orcid.org/0009-0008-2895-8719"
+                target="_blank"
+                rel="noopener noreferrer"
+                >ORCID 0009-0008-2895-8719</a
+              >
+            </p>
+            <p>
+              <i class="fab fa-linkedin"></i>
+              <a
+                href="https://www.linkedin.com/in/emmanuelopokuadjei/"
+                target="_blank"
+                rel="noopener noreferrer"
+                >LinkedIn</a
+              >
             </p>
             <p>
               <i class="fab fa-github"></i>
-              <a href="https://github.com/Chiefopoku" target="_blank"
+              <a
+                href="https://github.com/Chiefopoku"
+                target="_blank"
+                rel="noopener noreferrer"
                 >github.com/Chiefopoku</a
               >
             </p>
             <p><i class="fas fa-map-marker-alt"></i> Greensboro, NC, USA</p>
-          </div>
-          <div class="contact-cta">
-            <p>Ready to collaborate or need more details?</p>
-            <ul class="contact-highlights">
-              <li>Response guaranteed within 48 hours.</li>
-              <li>Happy to join calls across EST or GMT.</li>
-              <li>Project outlines or CV requests welcome.</li>
-            </ul>
-            <p class="cta-note">
-              Contact button above keeps the email hidden from bots while
-              staying simple for humans.
-            </p>
           </div>
         </div>
       </section>
     </main>
 
     <footer>
-      <p>&copy; 2025 Emmanuel Opoku-Adjei | Designed with ❤️ and science.</p>
+      <p>&copy; 2026 Emmanuel Opoku-Adjei</p>
       <div class="footer-links">
         <a href="#hero">Back to top</a>
         <a href="#contact">Contact</a>
+        <a
+          href="https://orcid.org/0009-0008-2895-8719"
+          target="_blank"
+          rel="noopener noreferrer"
+          >ORCID</a
+        >
+        <a
+          href="https://www.linkedin.com/in/emmanuelopokuadjei/"
+          target="_blank"
+          rel="noopener noreferrer"
+          >LinkedIn</a
+        >
         <a
           href="https://github.com/Chiefopoku"
           target="_blank"
@@ -519,6 +650,17 @@
       </div>
     </footer>
 
-    <script src="./script.js"></script>
+
+    <div id="lightbox" class="lightbox" role="dialog" aria-modal="true" aria-label="Photo viewer" hidden>
+      <button class="lb-close" type="button" aria-label="Close">&times;</button>
+      <button class="lb-prev" type="button" aria-label="Previous photo">&#8249;</button>
+      <figure>
+        <img id="lbImg" src="" alt="" />
+        <figcaption id="lbCap"></figcaption>
+      </figure>
+      <button class="lb-next" type="button" aria-label="Next photo">&#8250;</button>
+    </div>
+    <script src="./script.js?v=2"></script>
+    <script src="./modern.js?v=3"></script>
   </body>
 </html>

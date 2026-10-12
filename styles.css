@@ -1206,3 +1206,39 @@ footer p {
     flex-direction: column;
   }
 }
+
+/* ==========================
+   Research portfolio additions (Oct 2026)
+   ========================== */
+#research .card p,
+#journey .timeline-card p {
+  line-height: 1.6;
+}
+.timeline-card h3 {
+  margin: 0.6rem 0 0.25rem;
+  font-size: 1.05rem;
+}
+.timeline-date {
+  font-size: 0.85rem;
+  opacity: 0.75;
+  margin: 0 0 0.5rem;
+}
+.pub-list p {
+  margin-bottom: 1rem;
+  line-height: 1.6;
+}
+.pub-list a {
+  word-break: break-word;
+}
+.pub-links {
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+.contact-cta p {
+  margin: 0.4rem 0;
+}
+.interests-grid .card p {
+  line-height: 1.6;
+  margin: 0.4rem 0 0;
+}
